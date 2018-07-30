@@ -1,0 +1,28 @@
+SDK_HEADERS=\
+	./*.h \
+	../../include/*.h \
+	../../include/common/*.h \
+	../../include/amtrucks/*.h \
+	../../include/eurotrucks2/*.h
+
+SDK_INCLUDES=\
+	-I. \
+	-I../../include \
+	-I../../include/common/ \
+	-I../../include/amtrucks/ \
+	-I../../include/eurotrucks2
+
+UNAME:= $(shell uname -s)
+
+ifeq ($(UNAME),Darwin)
+LIB_NAME_OPTION=-install_name
+else
+LIB_NAME_OPTION=-soname
+endif
+
+telemetry.so:  *.cpp $(SDK_HEADERS)
+	gcc -o $@ -fPIC -Wall --shared -Wl,$(LIB_NAME_OPTION),$@ $(SDK_INCLUDES) -std=c++11 *.cpp
+
+.PHONY: clean
+clean:
+	@rm -f -- *.so
