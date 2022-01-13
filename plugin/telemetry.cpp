@@ -18,7 +18,6 @@
 #include <stdarg.h>
 #include <serial.h>
 
-#include <algorithm>
 #include <unordered_map>
 
 // SDK
