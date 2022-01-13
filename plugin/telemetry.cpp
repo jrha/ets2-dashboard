@@ -212,6 +212,10 @@ SCSAPI_VOID log_value(const scs_named_value_t *current) {
 		}
 		case SCS_VALUE_TYPE_u32: {
 			log_line("u32 = %u", static_cast<unsigned>(current->value.value_u32.value));
+				break;
+		}
+		case SCS_VALUE_TYPE_s64: {
+			log_line("s64 = %" SCS_PF_S64, current->value.value_s64.value);
 			break;
 		}
 		case SCS_VALUE_TYPE_u64: {
