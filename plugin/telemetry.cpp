@@ -643,7 +643,7 @@ SCSAPI_RESULT scs_telemetry_init(const scs_u32_t version, const scs_telemetry_in
 	last_timestamp = static_cast<scs_timestamp_t>(-1);
 
 	// Connect serial portname
-	serial_port = serial_connect("/dev/ttyACM0");
+	serial_port = serial_connect("/dev/ttyACM1");
 	game_log(SCS_LOG_TYPE_message, "TELEMETRY: Serial port connected");
 
 	// Initially the game is paused.
