@@ -1,16 +1,16 @@
 SDK_HEADERS=\
 	./*.h \
-	../../include/*.h \
-	../../include/common/*.h \
-	../../include/amtrucks/*.h \
-	../../include/eurotrucks2/*.h
+	../../scs_sdk_current/include/*.h \
+	../../scs_sdk_current/include/common/*.h \
+	../../scs_sdk_current/include/amtrucks/*.h \
+	../../scs_sdk_current/include/eurotrucks2/*.h
 
 SDK_INCLUDES=\
 	-I. \
-	-I../../include \
-	-I../../include/common/ \
-	-I../../include/amtrucks/ \
-	-I../../include/eurotrucks2
+	-I../../scs_sdk_current/include \
+	-I../../scs_sdk_current/include/common/ \
+	-I../../scs_sdk_current/include/amtrucks/ \
+	-I../../scs_sdk_current/include/eurotrucks2
 
 UNAME:= $(shell uname -s)
 
