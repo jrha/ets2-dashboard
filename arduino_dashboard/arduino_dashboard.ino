@@ -91,9 +91,9 @@ void loop() {
     } else if (property == "truck.engine.rpm") {
       servo_rpm.write(180 - value.toInt());
     } else if (property == "truck.light.rblinker") {
-      pin_bool(12, value);
+      pin_bool(11, value);
     } else if (property == "truck.light.lblinker") {
-      pin_bool(13, value);
+      pin_bool(12, value);
     } else if (property == "truck.light.brake") {
       pin_bool(8, value);
     } else if (property == "truck.light.beam.low") {
