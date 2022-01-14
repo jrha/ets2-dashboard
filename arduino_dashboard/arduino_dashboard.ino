@@ -103,7 +103,8 @@ void loop() {
     */
 
     if (property == "truck.speed") {
-      servo_speed.write(180 - value.toInt());
+      int v = min(abs(value.toInt()) * 5.4, 180.0);
+      servo_speed.write(180 - v);
 
       oled.fillRect(75, 36, 50, 10, SSD1306_BLACK);
       oled.setTextSize(1);
@@ -113,7 +114,8 @@ void loop() {
       oled.print(value);
       oled.display();
     } else if (property == "truck.engine.rpm") {
-      servo_rpm.write(180 - value.toInt());
+      int v = min(abs(value.toInt()) * 0.072, 180.0);
+      servo_rpm.write(180 - v);
     } else if (property == "truck.light.rblinker") {
       pin_bool(11, value);
     } else if (property == "truck.light.lblinker") {

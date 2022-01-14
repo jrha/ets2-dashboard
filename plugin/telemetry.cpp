@@ -385,12 +385,6 @@ SCSAPI_VOID telemetry_log(const scs_string_t name, const scs_u32_t index, const 
 		}
 		case SCS_VALUE_TYPE_float: {
 			float v = value->value_float.value;
-			// Convert to servo angles
-			if (strcmp(name, "truck.speed") == 0) {
-				v = std::min(abs(v) * 5.4, 180.0);
-			} else if (strcmp(name, "truck.engine.rpm") == 0) {
-				v = std::min(abs(v) * 0.072, 180.0);
-			}
 			sprintf(s, "%.0f", v);
 			update_metric(name, s);
 			break;
